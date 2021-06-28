@@ -1,0 +1,6 @@
+xcassets:
+  inputs:
+    - Jusan Test/Supporting Files/Assets.xcassets
+  outputs:
+    - templateName: swift5
+      output: Assets.swift

@@ -15,20 +15,39 @@ public final class TabBarViewController: UITabBarController {
             updateState()
         }
     }
-    private lazy var newsController = UIViewController()
-    private lazy var favoriteNewsController = UIViewController()
+    private lazy var newsController: UIViewController = {
+        let controller = UIViewController()
+        controller.tabBarItem = UITabBarItem(tabBarSystemItem: .mostViewed, tag: 0)
+        return controller
+    }()
+    private lazy var favoriteNewsController: UIViewController = {
+        let controller = UIViewController()
+        controller.tabBarItem = UITabBarItem(tabBarSystemItem: .favorites, tag: 0)
+        return controller
+    }()
     
     // MARK: - Init
     init(state: State) {
         self.state = state
         
         super.init(nibName: nil, bundle: nil)
-        
-        configureViews()
     }
     
     required init?(coder: NSCoder) {
         return nil
+    }
+    
+    // MARK: - Lifecycle
+    public override func loadView() {
+        super.loadView()
+        
+        configureViews()
+    }
+    
+    public override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        state = { state }()
     }
     
     // MARK: - Methods

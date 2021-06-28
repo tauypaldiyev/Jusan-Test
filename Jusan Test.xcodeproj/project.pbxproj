@@ -3,24 +3,26 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
 		916DBD97268A144700CC62BE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 916DBD96268A144700CC62BE /* AppDelegate.swift */; };
-		916DBD9B268A144700CC62BE /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 916DBD9A268A144700CC62BE /* ViewController.swift */; };
 		916DBDA0268A144A00CC62BE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 916DBD9F268A144A00CC62BE /* Assets.xcassets */; };
 		916DBDA3268A144A00CC62BE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 916DBDA1268A144A00CC62BE /* LaunchScreen.storyboard */; };
 		916DBDB2268A169700CC62BE /* TabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 916DBDB1268A169700CC62BE /* TabBarViewController.swift */; };
 		916DBDB4268A178400CC62BE /* TabBarBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 916DBDB3268A178400CC62BE /* TabBarBuilder.swift */; };
 		916DBDB6268A17A100CC62BE /* TabBar+State.swift in Sources */ = {isa = PBXBuildFile; fileRef = 916DBDB5268A17A100CC62BE /* TabBar+State.swift */; };
 		916DBDBA268A18BB00CC62BE /* ModuleBuilderProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 916DBDB9268A18BB00CC62BE /* ModuleBuilderProtocol.swift */; };
+		918BBB59268A1BED005AA04F /* Assets.swift in Sources */ = {isa = PBXBuildFile; fileRef = 918BBB58268A1BED005AA04F /* Assets.swift */; };
+		C02B170E763392328429F113 /* Pods_Jusan_Test.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0B17DFB34B41DF4A3BB762E1 /* Pods_Jusan_Test.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0B17DFB34B41DF4A3BB762E1 /* Pods_Jusan_Test.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Jusan_Test.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		2B6931240ADEBC224D391CD0 /* Pods-Jusan Test.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Jusan Test.debug.xcconfig"; path = "Target Support Files/Pods-Jusan Test/Pods-Jusan Test.debug.xcconfig"; sourceTree = "<group>"; };
 		916DBD93268A144700CC62BE /* Jusan Test.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Jusan Test.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		916DBD96268A144700CC62BE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		916DBD9A268A144700CC62BE /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		916DBD9F268A144A00CC62BE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		916DBDA2268A144A00CC62BE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		916DBDA4268A144A00CC62BE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -28,6 +30,8 @@
 		916DBDB3268A178400CC62BE /* TabBarBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarBuilder.swift; sourceTree = "<group>"; };
 		916DBDB5268A17A100CC62BE /* TabBar+State.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TabBar+State.swift"; sourceTree = "<group>"; };
 		916DBDB9268A18BB00CC62BE /* ModuleBuilderProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModuleBuilderProtocol.swift; sourceTree = "<group>"; };
+		918BBB58268A1BED005AA04F /* Assets.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Assets.swift; sourceTree = SOURCE_ROOT; };
+		FF0F6AE346818163759A5010 /* Pods-Jusan Test.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Jusan Test.release.xcconfig"; path = "Target Support Files/Pods-Jusan Test/Pods-Jusan Test.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -35,17 +39,37 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C02B170E763392328429F113 /* Pods_Jusan_Test.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		22E2967BC349AFAD816159C5 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				0B17DFB34B41DF4A3BB762E1 /* Pods_Jusan_Test.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		5F652A2C557EB986FDA3F1EB /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				2B6931240ADEBC224D391CD0 /* Pods-Jusan Test.debug.xcconfig */,
+				FF0F6AE346818163759A5010 /* Pods-Jusan Test.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
 		916DBD8A268A144600CC62BE = {
 			isa = PBXGroup;
 			children = (
 				916DBD95268A144700CC62BE /* Jusan Test */,
 				916DBD94268A144700CC62BE /* Products */,
+				5F652A2C557EB986FDA3F1EB /* Pods */,
+				22E2967BC349AFAD816159C5 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -89,7 +113,6 @@
 				916DBDB7268A18A700CC62BE /* Common */,
 				916DBDAD268A14AD00CC62BE /* Launch Screen */,
 				916DBDAF268A167D00CC62BE /* TabBar */,
-				916DBD9A268A144700CC62BE /* ViewController.swift */,
 			);
 			path = Scenes;
 			sourceTree = "<group>";
@@ -105,8 +128,8 @@
 		916DBDAE268A14B900CC62BE /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				918BBB57268A1BD4005AA04F /* Assets */,
 				916DBDA4268A144A00CC62BE /* Info.plist */,
-				916DBD9F268A144A00CC62BE /* Assets.xcassets */,
 			);
 			path = "Supporting Files";
 			sourceTree = "<group>";
@@ -145,6 +168,15 @@
 			path = Protocols;
 			sourceTree = "<group>";
 		};
+		918BBB57268A1BD4005AA04F /* Assets */ = {
+			isa = PBXGroup;
+			children = (
+				918BBB58268A1BED005AA04F /* Assets.swift */,
+				916DBD9F268A144A00CC62BE /* Assets.xcassets */,
+			);
+			path = Assets;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -152,9 +184,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 916DBDA7268A144A00CC62BE /* Build configuration list for PBXNativeTarget "Jusan Test" */;
 			buildPhases = (
+				ADCD57DA1995F899C35BCC37 /* [CP] Check Pods Manifest.lock */,
 				916DBD8F268A144700CC62BE /* Sources */,
 				916DBD90268A144700CC62BE /* Frameworks */,
 				916DBD91268A144700CC62BE /* Resources */,
+				F62C7AC0D83473C6AC3A2A2D /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -209,14 +243,56 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		ADCD57DA1995F899C35BCC37 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Jusan Test-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		F62C7AC0D83473C6AC3A2A2D /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Jusan Test/Pods-Jusan Test-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Jusan Test/Pods-Jusan Test-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Jusan Test/Pods-Jusan Test-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		916DBD8F268A144700CC62BE /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				916DBD9B268A144700CC62BE /* ViewController.swift in Sources */,
 				916DBDB4268A178400CC62BE /* TabBarBuilder.swift in Sources */,
 				916DBDB2268A169700CC62BE /* TabBarViewController.swift in Sources */,
+				918BBB59268A1BED005AA04F /* Assets.swift in Sources */,
 				916DBDB6268A17A100CC62BE /* TabBar+State.swift in Sources */,
 				916DBD97268A144700CC62BE /* AppDelegate.swift in Sources */,
 				916DBDBA268A18BB00CC62BE /* ModuleBuilderProtocol.swift in Sources */,
@@ -355,6 +431,7 @@
 		};
 		916DBDA8268A144A00CC62BE /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2B6931240ADEBC224D391CD0 /* Pods-Jusan Test.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -374,6 +451,7 @@
 		};
 		916DBDA9268A144A00CC62BE /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = FF0F6AE346818163759A5010 /* Pods-Jusan Test.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
