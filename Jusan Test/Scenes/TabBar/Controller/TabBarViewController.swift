@@ -15,13 +15,14 @@ public final class TabBarViewController: UITabBarController {
             updateState()
         }
     }
-    private lazy var newsController: UIViewController = {
-        let controller = UIViewController()
+    private lazy var newsTabController: UIViewController = {
+        let controller = NewsTabBuilder(state: .initial).build()
         controller.tabBarItem = UITabBarItem(tabBarSystemItem: .mostViewed, tag: 0)
         return controller
     }()
     private lazy var favoriteNewsController: UIViewController = {
         let controller = UIViewController()
+        controller.view.backgroundColor = .green
         controller.tabBarItem = UITabBarItem(tabBarSystemItem: .favorites, tag: 0)
         return controller
     }()
@@ -53,7 +54,7 @@ public final class TabBarViewController: UITabBarController {
     // MARK: - Methods
     public func configureTabBar() {
         viewControllers = [
-            newsController,
+            newsTabController,
             favoriteNewsController
         ]
     }
