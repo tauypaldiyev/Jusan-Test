@@ -11,6 +11,10 @@
 		916DBD9B268A144700CC62BE /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 916DBD9A268A144700CC62BE /* ViewController.swift */; };
 		916DBDA0268A144A00CC62BE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 916DBD9F268A144A00CC62BE /* Assets.xcassets */; };
 		916DBDA3268A144A00CC62BE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 916DBDA1268A144A00CC62BE /* LaunchScreen.storyboard */; };
+		916DBDB2268A169700CC62BE /* TabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 916DBDB1268A169700CC62BE /* TabBarViewController.swift */; };
+		916DBDB4268A178400CC62BE /* TabBarBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 916DBDB3268A178400CC62BE /* TabBarBuilder.swift */; };
+		916DBDB6268A17A100CC62BE /* TabBar+State.swift in Sources */ = {isa = PBXBuildFile; fileRef = 916DBDB5268A17A100CC62BE /* TabBar+State.swift */; };
+		916DBDBA268A18BB00CC62BE /* ModuleBuilderProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 916DBDB9268A18BB00CC62BE /* ModuleBuilderProtocol.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -20,6 +24,10 @@
 		916DBD9F268A144A00CC62BE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		916DBDA2268A144A00CC62BE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		916DBDA4268A144A00CC62BE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		916DBDB1268A169700CC62BE /* TabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarViewController.swift; sourceTree = "<group>"; };
+		916DBDB3268A178400CC62BE /* TabBarBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarBuilder.swift; sourceTree = "<group>"; };
+		916DBDB5268A17A100CC62BE /* TabBar+State.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TabBar+State.swift"; sourceTree = "<group>"; };
+		916DBDB9268A18BB00CC62BE /* ModuleBuilderProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModuleBuilderProtocol.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -78,7 +86,9 @@
 		916DBDAC268A14A400CC62BE /* Scenes */ = {
 			isa = PBXGroup;
 			children = (
+				916DBDB7268A18A700CC62BE /* Common */,
 				916DBDAD268A14AD00CC62BE /* Launch Screen */,
+				916DBDAF268A167D00CC62BE /* TabBar */,
 				916DBD9A268A144700CC62BE /* ViewController.swift */,
 			);
 			path = Scenes;
@@ -99,6 +109,40 @@
 				916DBD9F268A144A00CC62BE /* Assets.xcassets */,
 			);
 			path = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		916DBDAF268A167D00CC62BE /* TabBar */ = {
+			isa = PBXGroup;
+			children = (
+				916DBDB0268A168800CC62BE /* Controller */,
+				916DBDB3268A178400CC62BE /* TabBarBuilder.swift */,
+			);
+			path = TabBar;
+			sourceTree = "<group>";
+		};
+		916DBDB0268A168800CC62BE /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				916DBDB1268A169700CC62BE /* TabBarViewController.swift */,
+				916DBDB5268A17A100CC62BE /* TabBar+State.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		916DBDB7268A18A700CC62BE /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				916DBDB8268A18AD00CC62BE /* Protocols */,
+			);
+			path = Common;
+			sourceTree = "<group>";
+		};
+		916DBDB8268A18AD00CC62BE /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				916DBDB9268A18BB00CC62BE /* ModuleBuilderProtocol.swift */,
+			);
+			path = Protocols;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -171,7 +215,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				916DBD9B268A144700CC62BE /* ViewController.swift in Sources */,
+				916DBDB4268A178400CC62BE /* TabBarBuilder.swift in Sources */,
+				916DBDB2268A169700CC62BE /* TabBarViewController.swift in Sources */,
+				916DBDB6268A17A100CC62BE /* TabBar+State.swift in Sources */,
 				916DBD97268A144700CC62BE /* AppDelegate.swift in Sources */,
+				916DBDBA268A18BB00CC62BE /* ModuleBuilderProtocol.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
