@@ -15,8 +15,8 @@ public struct Filter: Codable {
     
     // MARK: - Properties
     private var q = "America"
-    private var page = 1
-    private var pageSize = 15
+    public var page = 1
+    public var pageSize = 15
     
     // MARK: - Init
     public func toJSON() -> JSON {

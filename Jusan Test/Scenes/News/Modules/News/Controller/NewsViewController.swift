@@ -24,6 +24,11 @@ public final class NewsViewController: UIViewController {
     public var sections = [Section]()
     public var page: NewsPage = .all {
         didSet {
+            filter = Filter()
+        }
+    }
+    public var filter: Filter? {
+        didSet {
             switch page {
             case .all:
                 getAllNews()
@@ -39,10 +44,17 @@ public final class NewsViewController: UIViewController {
     }
     
     // MARK: - Views
-    private lazy var mainView: NewsView = {
+    public lazy var mainView: NewsView = {
         let view = NewsView()
         view.dataSource = self
         view.delegate = self
+        view.infiniteScrollDelegate = self
+        view.refreshControl = refreshControl
+        return view
+    }()
+    public lazy var refreshControl: UIRefreshControl = {
+        let view = UIRefreshControl()
+        view.addTarget(self, action: #selector(refresh(_:)), for: .valueChanged)
         return view
     }()
     
@@ -72,6 +84,11 @@ public final class NewsViewController: UIViewController {
     }
     
     // MARK: - Methods
+    @objc
+    public func refresh(_ sender: UIRefreshControl) {
+        filter?.page = 1
+    }
+    
     private func configureNews() {
         sections.append(.init(section: .section, rows: news.compactMap { _ in .news }))
         mainView.reloadData()

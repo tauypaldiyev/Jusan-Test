@@ -9,11 +9,15 @@ extension NewsViewController {
     
     // MARK: - Network
     public func getAllNews() {
-        interactor.getAllNews(request: .init(filter: Filter()))
+        guard let filter = filter else { return }
+        
+        interactor.getAllNews(request: .init(filter: filter))
     }
     
     public func getTopNews() {
-        interactor.getTopNews(request: .init(filter: Filter()))
+        guard let filter = filter else { return }
+        
+        interactor.getTopNews(request: .init(filter: filter))
     }
     
 }

@@ -7,7 +7,7 @@
 
 import UIKit
 
-public final class NewsView: UITableView {
+public final class NewsView: InfiniteScrollableTableView {
     
     // MARK: - Init
     public init() {
