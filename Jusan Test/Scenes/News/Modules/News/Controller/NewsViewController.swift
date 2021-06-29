@@ -7,16 +7,22 @@
 
 import UIKit
 
+public protocol NewsDisplayLogic: AnyObject {
+    func displayAllNews(viewModel: NewsDataFlow.GetNews.ViewModel)
+    func displayTopNews(viewModel: NewsDataFlow.GetNews.ViewModel)
+}
+
 public final class NewsViewController: UIViewController {
     
     // MARK: - Properties
+    public let interactor: NewsBusinessLogic
     public var page: NewsPage = .all {
         didSet {
             switch page {
             case .all:
-                view.backgroundColor = .green
+                getAllNews()
             case .top:
-                view.backgroundColor = .yellow
+                getTopNews()
             }
         }
     }
@@ -27,7 +33,8 @@ public final class NewsViewController: UIViewController {
     }
     
     // MARK: - Init
-    public init(state: State) {
+    public init(interactor: NewsBusinessLogic, state: State) {
+        self.interactor = interactor
         self.state = state
         
         super.init(nibName: nil, bundle: nil)

@@ -19,7 +19,12 @@ final public class NewsBuilder: ModuleBuilderProtocol {
     
     // MARK: - ModuleBuilder
     public func build() -> UIViewController {
-        let viewController = NewsViewController(state: state)
+        let presenter = NewsPresenter()
+        let interactor = NewsInteractor(presenter: presenter)
+        let viewController = NewsViewController(interactor: interactor, state: state)
+        
+        presenter.viewController = viewController
+        
         return viewController
     }
     

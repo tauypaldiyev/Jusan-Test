@@ -5,11 +5,13 @@ PODS:
   - Moya/Core (14.0.0):
     - Alamofire (~> 5.0)
   - SnapKit (5.0.1)
+  - SwiftDate (6.3.1)
   - SwiftGen (6.4.0)
 
 DEPENDENCIES:
   - Moya
   - SnapKit
+  - SwiftDate
   - SwiftGen
 
 SPEC REPOS:
@@ -17,14 +19,16 @@ SPEC REPOS:
     - Alamofire
     - Moya
     - SnapKit
+    - SwiftDate
     - SwiftGen
 
 SPEC CHECKSUMS:
   Alamofire: e447a2774a40c996748296fa2c55112fdbbc42f9
   Moya: 5b45dacb75adb009f97fde91c204c1e565d31916
   SnapKit: 97b92857e3df3a0c71833cce143274bf6ef8e5eb
+  SwiftDate: 72d28954e8e1c6c1c0f917ccc8005e4f83c7d4b2
   SwiftGen: 67860cc7c3cfc2ed25b9b74cfd55495fc89f9108
 
-PODFILE CHECKSUM: 47d5c1dda6318621841a57341e34be75dd2af43f
+PODFILE CHECKSUM: 09bb430ebb9f8243959c47f55792fabce0d3db69
 
 COCOAPODS: 1.10.1
