@@ -45,6 +45,8 @@
 		91B0BFF6268B7EE100A40B6B /* NewsCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91B0BFF5268B7EE100A40B6B /* NewsCellViewModel.swift */; };
 		91B0BFF9268B865C00A40B6B /* InfiniteScrollableTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91B0BFF8268B865C00A40B6B /* InfiniteScrollableTableView.swift */; };
 		91B0BFFB268B86D100A40B6B /* News+InfiniteScroll.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91B0BFFA268B86D100A40B6B /* News+InfiniteScroll.swift */; };
+		91B0BFFD268B8FF000A40B6B /* News+Favorites.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91B0BFFC268B8FF000A40B6B /* News+Favorites.swift */; };
+		91B0C000268B909E00A40B6B /* FavoritesManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91B0BFFF268B909E00A40B6B /* FavoritesManager.swift */; };
 		91F9B1C1268A306C00A34403 /* NewsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91F9B1C0268A306C00A34403 /* NewsViewController.swift */; };
 		91F9B1C4268A309B00A34403 /* NewsPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91F9B1C3268A309B00A34403 /* NewsPage.swift */; };
 		91F9B1C6268A326700A34403 /* News+State.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91F9B1C5268A326700A34403 /* News+State.swift */; };
@@ -109,6 +111,8 @@
 		91B0BFF5268B7EE100A40B6B /* NewsCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsCellViewModel.swift; sourceTree = "<group>"; };
 		91B0BFF8268B865C00A40B6B /* InfiniteScrollableTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfiniteScrollableTableView.swift; sourceTree = "<group>"; };
 		91B0BFFA268B86D100A40B6B /* News+InfiniteScroll.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "News+InfiniteScroll.swift"; sourceTree = "<group>"; };
+		91B0BFFC268B8FF000A40B6B /* News+Favorites.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "News+Favorites.swift"; sourceTree = "<group>"; };
+		91B0BFFF268B909E00A40B6B /* FavoritesManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesManager.swift; sourceTree = "<group>"; };
 		91F9B1C0268A306C00A34403 /* NewsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsViewController.swift; sourceTree = "<group>"; };
 		91F9B1C3268A309B00A34403 /* NewsPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsPage.swift; sourceTree = "<group>"; };
 		91F9B1C5268A326700A34403 /* News+State.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "News+State.swift"; sourceTree = "<group>"; };
@@ -181,6 +185,7 @@
 			isa = PBXGroup;
 			children = (
 				916DBDAA268A149600CC62BE /* Application */,
+				91B0BFFE268B908D00A40B6B /* Managers */,
 				91F9B1E7268A3F1500A34403 /* Network */,
 				916DBDAC268A14A400CC62BE /* Scenes */,
 				916DBDAE268A14B900CC62BE /* Supporting Files */,
@@ -443,6 +448,14 @@
 			path = TableView;
 			sourceTree = "<group>";
 		};
+		91B0BFFE268B908D00A40B6B /* Managers */ = {
+			isa = PBXGroup;
+			children = (
+				91B0BFFF268B909E00A40B6B /* FavoritesManager.swift */,
+			);
+			path = Managers;
+			sourceTree = "<group>";
+		};
 		91F9B1BE268A305400A34403 /* News */ = {
 			isa = PBXGroup;
 			children = (
@@ -463,6 +476,7 @@
 			children = (
 				91F9B1C0268A306C00A34403 /* NewsViewController.swift */,
 				91B0BFE5268B742B00A40B6B /* News+DisplayLogic.swift */,
+				91B0BFFC268B8FF000A40B6B /* News+Favorites.swift */,
 				91B0BFFA268B86D100A40B6B /* News+InfiniteScroll.swift */,
 				91B0BFE3268B733900A40B6B /* News+Network.swift */,
 				91B0BFEF268B7C3F00A40B6B /* News+Section.swift */,
@@ -636,6 +650,7 @@
 			files = (
 				918BBB86268A2B76005AA04F /* NewsPager+State.swift in Sources */,
 				91F9B1D9268A3B5200A34403 /* JSON.swift in Sources */,
+				91B0BFFD268B8FF000A40B6B /* News+Favorites.swift in Sources */,
 				918BBB66268A2097005AA04F /* NewsTabBuilder.swift in Sources */,
 				918BBB8F268A2E5F005AA04F /* NewsTab+Pager.swift in Sources */,
 				91F9B1C1268A306C00A34403 /* NewsViewController.swift in Sources */,
@@ -664,6 +679,7 @@
 				91B0BFFB268B86D100A40B6B /* News+InfiniteScroll.swift in Sources */,
 				91B0BFE2268B70C000A40B6B /* NetworkError.swift in Sources */,
 				916DBDB6268A17A100CC62BE /* TabBar+State.swift in Sources */,
+				91B0C000268B909E00A40B6B /* FavoritesManager.swift in Sources */,
 				91B0BFE9268B796F00A40B6B /* DictionaryExtensions.swift in Sources */,
 				918BBB88268A2C94005AA04F /* NewsPager+Pager.swift in Sources */,
 				91F9B1D4268A38FC00A34403 /* NewsDTO.swift in Sources */,

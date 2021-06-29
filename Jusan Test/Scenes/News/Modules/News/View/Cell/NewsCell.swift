@@ -8,7 +8,14 @@
 import Kingfisher
 import UIKit
 
+public protocol NewsCellDelegate: AnyObject {
+    func cell(_ cell: NewsCell, didTappedFavoriteButton button: UIButton)
+}
+
 public final class NewsCell: UITableViewCell {
+    
+    // MARK: - Properties
+    public weak var delegate: NewsCellDelegate?
     
     // MARK: - Views
     private lazy var headerView: UIView = {
@@ -19,19 +26,25 @@ public final class NewsCell: UITableViewCell {
     }()
     private lazy var newsImageView: UIImageView = {
         let view = UIImageView()
+        view.clipsToBounds = true
         view.contentMode = .scaleAspectFill
         return view
     }()
     private lazy var titleLabel: UILabel = {
         let view = UILabel()
         view.numberOfLines = 0
-        view.textAlignment = .center
         return view
     }()
     private lazy var authorLabel = UILabel()
     private lazy var descriptionLabel: UILabel = {
         let view = UILabel()
         view.numberOfLines = 0
+        view.textAlignment = .center
+        return view
+    }()
+    private lazy var favoriteButton: UIButton = {
+        let view = UIButton()
+        view.addTarget(self, action: #selector(didTappedFavorite(_:)), for: .touchUpInside)
         return view
     }()
     
@@ -47,11 +60,17 @@ public final class NewsCell: UITableViewCell {
     }
     
     // MARK: - Methods
+    @objc
+    private func didTappedFavorite(_ sender: UIButton) {
+        delegate?.cell(self, didTappedFavoriteButton: sender)
+    }
+    
     public func configure(with viewModel: NewsCellProtocol) {
         newsImageView.kf.setImage(with: viewModel.imageURL)
         titleLabel.attributedText = viewModel.title
         authorLabel.attributedText = viewModel.author
         descriptionLabel.attributedText = viewModel.description
+        favoriteButton.setImage(viewModel.favoriteIcon, for: .normal)
     }
     
     private func configureViews() {
@@ -59,7 +78,7 @@ public final class NewsCell: UITableViewCell {
         [headerView].forEach {
             contentView.addSubview($0)
         }
-        [newsImageView, titleLabel, authorLabel, descriptionLabel].forEach {
+        [newsImageView, titleLabel, authorLabel, descriptionLabel, favoriteButton].forEach {
             headerView.addSubview($0)
         }
         
@@ -72,26 +91,31 @@ public final class NewsCell: UITableViewCell {
             make.edges.equalToSuperview().inset(10)
         }
         newsImageView.snp.makeConstraints { make in
-            make.top.equalTo(titleLabel.snp.bottom).offset(10)
+            make.top.equalToSuperview().inset(10)
             make.leading.equalToSuperview().inset(10)
-            make.bottom.lessThanOrEqualToSuperview().inset(20)
-            make.size.equalTo(CGSize(width: 50, height: 50))
+            make.size.equalTo(CGSize(width: 70, height: 50))
         }
         titleLabel.snp.makeConstraints { make in
             make.top.equalToSuperview().inset(10)
-            make.leading.equalToSuperview().inset(10)
-            make.trailing.equalToSuperview().inset(10)
+            make.leading.equalTo(newsImageView.snp.trailing).offset(10)
+            make.trailing.equalTo(favoriteButton.snp.leading).offset(-10)
         }
         authorLabel.snp.makeConstraints { make in
-            make.top.equalTo(newsImageView.snp.top)
+            make.top.equalTo(titleLabel.snp.bottom)
             make.leading.equalTo(newsImageView.snp.trailing).offset(10)
             make.trailing.equalToSuperview().inset(10)
         }
         descriptionLabel.snp.makeConstraints { make in
-            make.top.equalTo(authorLabel.snp.bottom).offset(5)
-            make.leading.equalTo(newsImageView.snp.trailing).offset(10)
+            make.top.greaterThanOrEqualTo(newsImageView.snp.bottom).offset(10)
+            make.top.greaterThanOrEqualTo(authorLabel.snp.bottom).offset(10)
+            make.leading.equalToSuperview().inset(10)
             make.trailing.equalToSuperview().inset(10)
-            make.bottom.lessThanOrEqualToSuperview().inset(20)
+            make.bottom.equalToSuperview().inset(20)
+        }
+        favoriteButton.snp.makeConstraints { make in
+            make.top.equalToSuperview().inset(10)
+            make.trailing.equalToSuperview().inset(10)
+            make.size.equalTo(CGSize(width: 30, height: 30))
         }
     }
     

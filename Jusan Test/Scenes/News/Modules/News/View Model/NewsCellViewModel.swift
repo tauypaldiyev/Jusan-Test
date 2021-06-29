@@ -12,6 +12,7 @@ public protocol NewsCellProtocol {
     var author: NSAttributedString? { get }
     var description: NSAttributedString? { get }
     var imageURL: URL? { get }
+    var favoriteIcon: UIImage? { get }
 }
 
 public struct NewsCellViewModel: NewsCellProtocol {
@@ -39,7 +40,17 @@ public struct NewsCellViewModel: NewsCellProtocol {
     }
     
     public var imageURL: URL? {
-        return news.url
+        return news.urlToImage
+    }
+    
+    public var favoriteIcon: UIImage? {
+        var isFavorite: Bool {
+            guard let newsTitle = news.title else { return false }
+            
+            return FavoritesManager.shared.isFavorite(with: newsTitle)
+        }
+        return UIImage(systemName: isFavorite ? "bookmark.fill" : "bookmark",
+                       withConfiguration: UIImage.SymbolConfiguration(weight: .bold))
     }
     
     // MARK: - Init

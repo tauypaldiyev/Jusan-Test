@@ -66,6 +66,7 @@ extension NewsViewController: UITableViewDelegate {
             guard let cell = cell as? NewsCell else { return }
 
             let news = news[indexPath.row]
+            cell.delegate = self
             cell.configure(with: NewsCellViewModel(news: news))
         }
     }
