@@ -16,6 +16,12 @@ public final class NewsViewController: UIViewController {
     
     // MARK: - Properties
     public let interactor: NewsBusinessLogic
+    public var news: [NewsDTO] = [] {
+        didSet {
+            configureNews()
+        }
+    }
+    public var sections = [Section]()
     public var page: NewsPage = .all {
         didSet {
             switch page {
@@ -31,6 +37,14 @@ public final class NewsViewController: UIViewController {
             updateState()
         }
     }
+    
+    // MARK: - Views
+    private lazy var mainView: NewsView = {
+        let view = NewsView()
+        view.dataSource = self
+        view.delegate = self
+        return view
+    }()
     
     // MARK: - Init
     public init(interactor: NewsBusinessLogic, state: State) {
@@ -58,8 +72,23 @@ public final class NewsViewController: UIViewController {
     }
     
     // MARK: - Methods
+    private func configureNews() {
+        sections.append(.init(section: .section, rows: news.compactMap { _ in .news }))
+        mainView.reloadData()
+    }
+    
     private func configureViews() {
+        [mainView].forEach {
+            view.addSubview($0)
+        }
         
+        makeConstraints()
+    }
+    
+    private func makeConstraints() {
+        mainView.snp.makeConstraints { make in
+            make.edges.equalToSuperview()
+        }
     }
     
 }

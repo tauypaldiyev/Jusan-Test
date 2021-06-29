@@ -21,7 +21,7 @@ extension NewsViewController {
             self.page = page
         case let .displayAllNews(news),
              let .displayTopNews(news):
-            print(news)
+            self.news = news
         case let .allNewsError(error),
              let .topNewsError(error):
             print(error)

@@ -6,4 +6,5 @@ target 'Jusan Test' do
   pod 'Moya'
   pod 'SwiftGen'
   pod 'SwiftDate'
+  pod 'Kingfisher'
 end

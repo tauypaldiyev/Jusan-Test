@@ -14,7 +14,7 @@ public struct Filter: Codable {
     }
     
     // MARK: - Properties
-    private var q = "VIPER"
+    private var q = "America"
     private var page = 1
     private var pageSize = 15
     
