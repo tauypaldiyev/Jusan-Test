@@ -11,7 +11,7 @@ public final class NewsTabViewController: UIViewController {
     
     // MARK: - Properties
     public lazy var pagerViewController: NewsPagerViewController = {
-        guard let controller = NewsPagerBuilder(state: .initial(NewsPage.allCases)).build() as? NewsPagerViewController else {
+        guard let controller = NewsPagerBuilder(state: .initial([.all, .top])).build() as? NewsPagerViewController else {
             return NewsPagerViewController(state: .initial([]))
         }
         
@@ -20,7 +20,7 @@ public final class NewsTabViewController: UIViewController {
     }()
     public var selectedIndexPath = IndexPath(row: .zero, section: .zero)
     public let sections: [Section] = [
-        .init(section: .section, rows: NewsPage.allCases.compactMap { .page($0) })
+        .init(section: .section, rows: [.all, .top].compactMap { .page($0) })
     ]
     public var state: State {
         didSet {

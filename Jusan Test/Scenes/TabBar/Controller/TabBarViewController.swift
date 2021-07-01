@@ -21,8 +21,7 @@ public final class TabBarViewController: UITabBarController {
         return controller
     }()
     private lazy var favoriteNewsController: UIViewController = {
-        let controller = UIViewController()
-        controller.view.backgroundColor = .green
+        let controller = UINavigationController(rootViewController: NewsBuilder(state: .initial(.favorites)).build())
         controller.tabBarItem = UITabBarItem(tabBarSystemItem: .favorites, tag: 0)
         return controller
     }()

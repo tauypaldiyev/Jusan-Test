@@ -34,6 +34,8 @@ public final class NewsViewController: UIViewController {
                 getAllNews()
             case .top:
                 getTopNews()
+            case .favorites:
+                getFavorites()
             }
         }
     }
@@ -99,6 +101,7 @@ public final class NewsViewController: UIViewController {
             view.addSubview($0)
         }
         
+        configureColors()
         makeConstraints()
     }
     
@@ -106,6 +109,10 @@ public final class NewsViewController: UIViewController {
         mainView.snp.makeConstraints { make in
             make.edges.equalToSuperview()
         }
+    }
+    
+    private func configureColors() {
+        view.backgroundColor = .white
     }
     
 }

@@ -20,4 +20,9 @@ extension NewsViewController {
         interactor.getTopNews(request: .init(filter: filter))
     }
     
+    public func getFavorites() {
+        let favorites = FavoritesManager.shared.getAllFavorites()
+        state = .displayAllFavorites(favorites)
+    }
+    
 }

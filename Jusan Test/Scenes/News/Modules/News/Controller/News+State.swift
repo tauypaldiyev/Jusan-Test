@@ -11,6 +11,7 @@ extension NewsViewController {
         case initial(NewsPage)
         case displayAllNews([NewsDTO])
         case displayTopNews([NewsDTO])
+        case displayAllFavorites([NewsDTO])
         case allNewsError(Error)
         case topNewsError(Error)
     }
@@ -22,7 +23,8 @@ extension NewsViewController {
         case let .initial(page):
             self.page = page
         case let .displayAllNews(news),
-             let .displayTopNews(news):
+             let .displayTopNews(news),
+             let .displayAllFavorites(news):
             updateList(news)
             removeInfiniteScrollIfNeeded(news)
         case let .allNewsError(error),

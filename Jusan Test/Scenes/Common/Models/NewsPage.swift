@@ -8,6 +8,7 @@
 public enum NewsPage: CaseIterable {
     case all
     case top
+    case favorites
     
     var title: String {
         switch self {
@@ -15,6 +16,8 @@ public enum NewsPage: CaseIterable {
             return "Все"
         case .top:
             return "Популярные"
+        case .favorites:
+            return "Избранные"
         }
     }
 }

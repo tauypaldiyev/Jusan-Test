@@ -45,9 +45,7 @@ public struct NewsCellViewModel: NewsCellProtocol {
     
     public var favoriteIcon: UIImage? {
         var isFavorite: Bool {
-            guard let newsTitle = news.title else { return false }
-            
-            return FavoritesManager.shared.isFavorite(with: newsTitle)
+            return FavoritesManager.shared.isFavorite(with: news)
         }
         return UIImage(systemName: isFavorite ? "bookmark.fill" : "bookmark",
                        withConfiguration: UIImage.SymbolConfiguration(weight: .bold))

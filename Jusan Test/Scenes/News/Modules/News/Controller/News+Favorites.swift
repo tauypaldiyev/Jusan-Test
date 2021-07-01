@@ -12,10 +12,9 @@ extension NewsViewController: NewsCellDelegate {
     // MARK: - NewsCellDelegate
     public func cell(_ cell: NewsCell, didTappedFavoriteButton button: UIButton) {
         guard let index = mainView.indexPath(for: cell),
-              let news = news[safe: index.row],
-              let newsTitle = news.title else { return }
+              let news = news[safe: index.row] else { return }
         
-        FavoritesManager.shared.configure(with: newsTitle)
+        FavoritesManager.shared.configure(with: news)
         cell.configure(with: NewsCellViewModel(news: news))
     }
     
